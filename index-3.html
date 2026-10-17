@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#c8301b">
+<meta name="description" content="Menu and deals at Arshad Fast Food & Pizza Cafe, Chak Shahana Road, Khanewal. Pizza, zinger burgers, shawarma, wraps, pasta, fries and family deals. Order on WhatsApp.">
+<title>Arshad Fast Food & Pizza Cafe | Khanewal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#17120f;--card:#241c18;--chip:#2f2520;--line:#3d3029;--cheese:#ffc928;--tomato:#c8301b;--paper:#fff4de;--mute:#bfae9c}
+*{box-sizing:border-box}
+html{scroll-padding-top:64px}
+:root{padding-top:env(safe-area-inset-top,0px)}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--ink);color:var(--paper);font:16px/1.5 'DM Sans',system-ui,sans-serif;padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
+h1,h2,h3{font-family:'Bowlby One',Impact,'Arial Black',sans-serif;font-weight:400;line-height:1.08;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cheese);outline-offset:2px}
+.wrap{width:min(1100px,92%);margin:auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 20px;border-radius:10px;font-weight:700;text-decoration:none;border:2px solid var(--paper);color:var(--paper);background:transparent}
+.btn.pri{background:var(--cheese);border-color:var(--cheese);color:#21170a}
+.btn.sm{min-height:38px;padding:0 14px;font-size:14px}
+
+.top{background:#0f0b09;border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:14px;padding:10px 0}
+.brand{font-family:'Bowlby One',Impact,sans-serif;font-size:15px;text-decoration:none}
+.status{margin-left:auto;font-size:13px;color:var(--mute);display:flex;align-items:center;gap:7px}
+.status::before{content:"";width:9px;height:9px;border-radius:50%;background:#777}
+.status.on{color:#bff0c4}.status.on::before{background:#4fd36a}
+.status.off::before{background:#e8452c}
+
+.hero{background:var(--tomato);padding:44px 0 40px}
+.hero-in{display:grid;grid-template-columns:1.25fr .75fr;gap:28px;align-items:center}
+.hero h1{font-size:clamp(38px,7vw,74px)}
+.hero p{font-size:18px;max-width:34em;margin:16px 0 0}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.hero .addr{font-size:14px;margin-top:20px;opacity:.92}
+.pizza{width:min(100%,320px);justify-self:center;filter:drop-shadow(0 14px 18px #0006)}
+
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:#17120ff2;border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+.nav .wrap{display:flex;gap:6px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.nav a{white-space:nowrap;text-decoration:none;padding:8px 14px;border-radius:99px;background:var(--chip);font-size:14px;font-weight:700}
+.nav a:hover{background:var(--cheese);color:#21170a}
+
+.sec{padding:46px 0 8px}
+.sec h2{font-size:clamp(28px,5vw,42px)}
+.sub{color:var(--mute);margin:8px 0 22px}
+
+.deals{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.deal{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column}
+.tag{align-self:flex-start;background:var(--cheese);color:#21170a;font-weight:700;font-size:13px;padding:3px 10px;border-radius:6px;margin-bottom:10px}
+.deal h3{font-size:19px}
+.deal ul{margin:10px 0 16px;padding-left:18px;color:#e6d9c6;flex:1}
+.deal .foot{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.price{font-family:'Bowlby One',Impact,sans-serif;color:var(--cheese);font-size:26px;white-space:nowrap}
+
+.search{width:100%;background:var(--card);color:var(--paper);border:1px solid #5a4a3f;border-radius:12px;padding:14px 16px;font:inherit;margin-bottom:18px}
+.menu{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;align-items:start}
+.cat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.cat h3{font-size:22px;padding-bottom:12px;border-bottom:2px solid var(--tomato)}
+.item{padding:13px 0;border-bottom:1px dashed var(--line)}
+.item:last-child{border-bottom:0;padding-bottom:0}
+.row{display:flex;justify-content:space-between;gap:14px}
+.name{font-weight:700}
+.desc{display:block;color:var(--mute);font-size:13px;font-weight:400;margin-top:2px}
+.amt{color:var(--cheese);font-weight:700;white-space:nowrap}
+.sz{display:grid;grid-template-columns:repeat(var(--n),1fr);gap:6px;margin-top:10px}
+.sz span{background:var(--chip);border-radius:8px;padding:6px 4px;text-align:center;color:var(--cheese);font-weight:700}
+.sz small{display:block;color:var(--mute);font-size:11px;font-weight:400}
+.none{color:var(--mute);padding:14px 0}
+
+.posters{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.posters img{width:100%;display:block;border-radius:12px;border:1px solid var(--line)}
+
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.contact .cat h3{border:0;padding:0 0 10px}
+.contact p{margin:0 0 14px;color:#e6d9c6}
+.contact .lg{font-size:20px;font-weight:700;display:block;margin-bottom:4px}
+.small{font-size:13px;color:var(--mute)}
+.foot-bar{margin-top:46px;padding:22px 0;border-top:1px solid var(--line);text-align:center;font-size:13px;color:var(--mute)}
+
+.dock{display:none}
+@media(max-width:760px){
+ .hero-in,.menu,.posters,.contact{grid-template-columns:1fr}
+ .pizza{width:200px;order:-1}
+ .hero{padding:32px 0}
+ .dock{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:20;padding:10px 4% calc(10px + env(safe-area-inset-bottom,0px));background:#0f0b09;border-top:1px solid var(--line)}
+ .dock .btn{min-height:50px}
+}
+@media(min-width:761px){body{padding-bottom:0}}
+</style>
+</head>
+<body>
+
+<div class="top"><div class="wrap">
+  <a class="brand" href="#top">Arshad Fast Food</a>
+  <span class="status" id="status">Chak Shahana Road, Khanewal</span>
+</div></div>
+
+<header class="hero" id="top"><div class="wrap hero-in">
+  <div>
+    <h1>Arshad Fast Food &amp; Pizza Cafe</h1>
+    <p>Pizza, zinger burgers, shawarma and family deals. Pick from the menu, then order on WhatsApp or call us.</p>
+    <div class="btns">
+      <a class="btn pri" id="heroWa" href="#" target="_blank" rel="noopener">Order on WhatsApp</a>
+      <a class="btn" href="tel:+923036224411">Call 0303 6224411</a>
+    </div>
+    <p class="addr">Chak Shahana Road, Khanewal, Punjab</p>
+  </div>
+  <svg class="pizza" viewBox="0 0 200 200" role="img" aria-label="Pizza illustration">
+    <circle cx="100" cy="100" r="94" fill="#d98a3d"/>
+    <circle cx="100" cy="100" r="82" fill="#ffc928"/>
+    <circle cx="100" cy="100" r="82" fill="none" stroke="#e8a21a" stroke-width="3" stroke-dasharray="2 9"/>
+    <g fill="#b92a17"><circle cx="70" cy="64" r="14"/><circle cx="130" cy="70" r="14"/><circle cx="62" cy="122" r="14"/><circle cx="120" cy="132" r="14"/><circle cx="98" cy="98" r="12"/></g>
+    <g fill="#2b2118"><circle cx="100" cy="50" r="5"/><circle cx="150" cy="104" r="5"/><circle cx="88" cy="156" r="5"/><circle cx="46" cy="90" r="5"/><circle cx="140" cy="148" r="5"/></g>
+    <g stroke="#d98a3d" stroke-width="3"><path d="M100 18v164M18 100h164M42 42l116 116M158 42L42 158"/></g>
+  </svg>
+</div></header>
+
+<nav class="nav" aria-label="Sections"><div class="wrap" id="chips"></div></nav>
+
+<main>
+<section class="sec" id="deals"><div class="wrap">
+  <h2>Deals</h2>
+  <p class="sub">16 combo deals. Tap Order to send the deal to us on WhatsApp.</p>
+  <div class="deals" id="dealGrid"></div>
+</div></section>
+
+<section class="sec" id="menu"><div class="wrap">
+  <h2>Menu</h2>
+  <p class="sub">All prices in Pakistani rupees (Rs.).</p>
+  <input class="search" id="q" type="search" placeholder="Search pizza, zinger, fries, shawarma…" aria-label="Search the menu">
+  <div class="menu" id="menuGrid"></div>
+  <p class="none" id="none" hidden>No items match your search. Try another word.</p>
+</div></section>
+
+<section class="sec" id="photos"><div class="wrap">
+  <h2>Menu photos</h2>
+  <p class="sub">Tap a poster to open it full size.</p>
+  <div class="posters">
+    <a href="assets/full-menu.jpg" target="_blank" rel="noopener"><img src="assets/full-menu.jpg" alt="Full menu: pizza, wraps, shawarma, burgers, wings, pasta and sandwiches" onerror="gone(this)"></a>
+    <a href="assets/deals-menu.webp" target="_blank" rel="noopener"><img src="assets/deals-menu.webp" alt="Combo deals 1 to 16 with contact details" onerror="gone(this)"></a>
+  </div>
+</div></section>
+
+<section class="sec" id="contact"><div class="wrap">
+  <h2>Visit or contact us</h2>
+  <p class="sub">Arshad Fast Food &amp; Pizza Cafe, Khanewal</p>
+  <div class="contact">
+    <div class="cat">
+      <h3>Find us</h3>
+      <p>Chak Shahana Road, Khanewal, Punjab, Pakistan</p>
+      <a class="btn pri" href="https://maps.app.goo.gl/UtKs1Rjn7HSw3M4v5" target="_blank" rel="noopener">Open in Google Maps</a>
+      <p class="small" style="margin:14px 0 0">Open daily, about 10:00 AM to 2:00 AM.</p>
+    </div>
+    <div class="cat">
+      <h3>Call or WhatsApp</h3>
+      <p><a class="lg" href="tel:+923036224411">0303 6224411</a><a class="lg" href="tel:+923336224411">0333 6224411</a></p>
+      <div class="btns" style="margin:0">
+        <a class="btn pri" id="wa2" href="#" target="_blank" rel="noopener">WhatsApp us</a>
+        <a class="btn" href="mailto:arshadfastfood@gmail.com">Email</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bar">© <span id="year"></span> Arshad Fast Food &amp; Pizza Cafe. Prices and availability can change; please confirm when you order.</div>
+</div></section>
+</main>
+
+<div class="dock">
+  <a class="btn" href="tel:+923036224411">Call</a>
+  <a class="btn pri" id="wa3" href="#" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+
+<script>
+const wa=t=>'https://wa.me/923036224411?text='+encodeURIComponent(t);
+const rs=n=>'Rs. '+n.toLocaleString('en-US');
+const $=s=>document.querySelector(s);
+function gone(i){i.parentElement.remove();if(!document.querySelector('.posters a')){$('#photos').remove();const c=document.querySelector('#chips a[href="#photos"]');if(c)c.remove();}}
+
+/* ---------- Data ---------- */
+const deals=[
+['Zinger Burger Combo',['Zinger burger','French fries','350 ml drink'],450],
+['Patty Burger Combo',['1 patty burger','1 French fries','2 nuggets','350 ml drink'],500],
+['Sandwich Combo',['Sandwich','Fries','2 hot wings','350 ml drink'],500],
+['Medium Flaming + Zinger',['1 medium Flaming pasta','1 zinger burger','500 ml drink'],750],
+['Pizza & Snacks Combo',['1 large Flaming Pasta','1 medium pizza (10″)','8 nuggets','1.5 litre drink'],1950],
+['Small Pizza Combo',['Small pizza (7″)','Zinger burger','500 ml drink'],850],
+['Wings & Bites',['8 hot wings','8 nuggets','8 hot shots','1 litre drink'],1200],
+['3 Zinger Burger Combo',['3 zinger burgers','French fries','1 litre drink'],1050],
+['5 Zinger Burger Combo',['5 zinger burgers','French fries','1.5 litre drink'],1750],
+['8 Zinger Burger Combo',['8 zinger burgers','French fries','2.5 litre drink'],2800],
+['Pizza & Wings',['10 hot wings','1 large pizza','1.5 litre drink'],1850],
+['2 Medium Pizza Combo',['2 medium pizzas (10″)','1.5 litre drink'],1900],
+['2 Large Pizza Combo',['2 large pizzas (13″)','2.25 litre drink'],2700],
+['2 XL Pizza Combo',['2 XL pizzas (16″)','1.5 litre drink'],3800],
+['XL Pizza & Zinger',['1 XL pizza (16″)','4 zinger burgers','French fries','2.25 litre drink'],3300],
+['Family Feast',['2 large pizzas (13″)','6 zinger burgers','French fries','2 pound cake','2 × 1.5 litre drink'],6000]
+];
+
+const SZ=['Small 7″','Medium 10″','Large 13″','XL 16″'];
+const P=[500,950,1350,1900], S=[570,1050,1550,2200], S3=[null,1050,1550,2200];
+const cats=[
+{id:'pizza',t:'Pizza',z:SZ,i:[
+ ['Tikka','Chicken, mozzarella, cheese, onion',P],
+ ['Fajita','Chicken, capsicum, black olive, tasty tomato sauce, mozzarella cheese',P],
+ ['B.B.Q','BBQ sauce, BBQ chicken, mushroom, onion, tasty tomato sauce',P],
+ ['Italian Pasta Pizza','Chicken, capsicum, black olives, mushroom, sausages',P],
+ ['Afghani Tikka','Chicken, black &amp; green olives, capsicum, tomatoes',P]]},
+{id:'special-pizza',t:'Special pizza',z:SZ,i:[
+ ['Arshad Special','Chicken kabab, chicken capsicum, mozzarella cheese, black olives',S3],
+ ['Extreme Special','Special flavoured chicken, mozzarella cheese, capsicum, tomato',S],
+ ['Royal Crust','Chicken cheese balls, tomato, sweet corn, sausages, pepperoni',S3],
+ ['Bon Fire','Special grill chicken, mozzarella cheese, capsicum, jalapeño, tomato',S],
+ ['Lasania Kabab Crust','Chicken, mozzarella cheese, black olives, capsicum, tomato, mushrooms',S],
+ ['Super Supreme','Supreme chicken, mozzarella cheese, black olives, tasty tomato',S]]},
+{id:'wraps',t:'Paratha rolls',i:[
+ ['BBQ Paratha Roll','',250],['Crispy Paratha Roll','',250],['Tikka Paratha Roll','',250],
+ ['Fajita Paratha Roll','',250],['Tandoori Paratha Roll','',250],['Arshad Special Paratha Roll','',300]]},
+{id:'shawarma',t:'Shawarma',i:[
+ ['Chicken Shawarma','',140],['Arshad Special Shawarma','',190],['Zinger Shawarma','',250],
+ ['Zinger Cheese Shawarma','',300],['Special Grilled Shawarma','',400]]},
+{id:'burgers',t:'Burgers',i:[
+ ['Zinger Burger','',350],['Chicken Patty Burger','',350],['Zinger Cheese Burger','',400],
+ ['Arshad Special Burger','',500],['Pizza Burger','',500],['Zinger Tower Burger','',500],['Special Grilled Burger','',500]]},
+{id:'wings',t:'Wings &amp; snacks',i:[
+ ['Hot Shot (12 pieces)','',480],['Hot &amp; Spicy (12 pieces)','',650],['Creamy Wings (12 pieces)','',700],
+ ['Crispy Wings (12 pieces)','',700],['Nuggets (12 pieces)','',700],['French Fries (M)','',300],
+ ['French Fries (L)','',500],['Cheesy Fries','',500],['Pizza Fries','',600]]},
+{id:'pasta',t:'Pasta',z:['Medium','Large'],i:[
+ ['Flaming Pasta','',[350,600]],['Crunchy Pasta','',[350,600]],['Italian Pasta','',[350,600]],['Al Faredo Pasta','',[400,700]]]},
+{id:'sandwiches',t:'Sandwiches',i:[
+ ['Fajita Sandwich','',350],['Chicken Tikka Sandwich','',350],['Italian Sandwich','',350],['Arshad Special Sandwich','',400]]}
+];
+
+/* ---------- Render ---------- */
+$('#dealGrid').innerHTML=deals.map(([t,l,p],k)=>`<article class="deal"><span class="tag">Deal ${k+1}</span><h3>${t}</h3><ul>${l.map(x=>`<li>${x}</li>`).join('')}</ul><div class="foot"><span class="price">${rs(p)}</span><a class="btn sm" target="_blank" rel="noopener" href="${wa(`Assalam o Alaikum, I would like to order Deal ${k+1}: ${t} (${rs(p)}).`)}">Order</a></div></article>`).join('');
+
+$('#chips').innerHTML=[['deals','Deals'],...cats.map(c=>[c.id,c.t]),['photos','Menu photos'],['contact','Contact']].map(([id,t])=>`<a href="#${id}">${t}</a>`).join('');
+
+function menu(q=''){
+  q=q.toLowerCase().trim();
+  const html=cats.map(c=>{
+    const items=c.i.filter(([n,d])=>!q||(n+' '+d+' '+c.t).toLowerCase().includes(q));
+    if(!items.length)return'';
+    return `<section class="cat" id="${c.id}"><h3>${c.t}</h3>${items.map(([n,d,p])=>{
+      const desc=d?`<span class="desc">${d}</span>`:'';
+      if(Array.isArray(p))return `<div class="item"><span class="name">${n}</span>${desc}<div class="sz" style="--n:${p.length}">${p.map((v,k)=>`<span><small>${c.z[k]}</small>${v?v:'—'}</span>`).join('')}</div></div>`;
+      return `<div class="item"><div class="row"><span class="name">${n}${desc}</span><span class="amt">${p}</span></div></div>`;
+    }).join('')}</section>`;
+  }).join('');
+  $('#menuGrid').innerHTML=html;
+  $('#none').hidden=!!html;
+}
+menu();
+$('#q').addEventListener('input',e=>menu(e.target.value));
+
+/* ---------- Links, year, open status ---------- */
+const hi=wa('Assalam o Alaikum, I would like to place an order.');
+['#heroWa','#wa2','#wa3'].forEach(s=>$(s).href=hi);
+$('#year').textContent=new Date().getFullYear();
+try{
+  const h=+new Intl.DateTimeFormat('en-GB',{hour:'numeric',hour12:false,timeZone:'Asia/Karachi'}).format(new Date())%24;
+  const on=h>=10||h<2, s=$('#status');
+  s.textContent=on?'Open now, until 2 AM':'Closed now, opens at 10 AM';
+  s.classList.add(on?'on':'off');
+}catch(e){}
+</script>
+</body>
+</html>
